@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{43BEB154-3B70-6D44-9166-728FB1A1C59B}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Clock1.cs">
+    <Files>
+      <File FileName="Assets/Scripts/Clock.cs" Line="31" Column="3" />
+      <File FileName="Assets/Scripts/Clock1.cs" Line="4" Column="20" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b4541d96-3442-48f7-8d6d-14e658ff2b3b" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
