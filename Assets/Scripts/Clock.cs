@@ -20,7 +20,8 @@ public class Clock : MonoBehaviour
 			Quaternion.Euler(0f, 0f, secondsToDegrees * time.Second);
 	}
 
-    void Update () {
+    void Update ()
+    {
 		var time = DateTime.Now;
 		hoursPivot.localRotation =
 			Quaternion.Euler(0f, 0f, hoursToDegrees * time.Hour);
