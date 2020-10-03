@@ -1,13 +1,13 @@
 ﻿<Properties StartupConfiguration="{43BEB154-3B70-6D44-9166-728FB1A1C59B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Clock.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Shaders/Point Surface.shader">
     <Files>
-      <File FileName="Assets/Scripts/Clock.cs" Line="24" Column="5" />
-      <File FileName="Assets/Scripts/Clock1.cs" Line="31" Column="74" />
+      <File FileName="Assets/Scripts/Graph.cs" Line="28" Column="36" />
+      <File FileName="Assets/Shaders/Point Surface.shader" Line="39" Column="1" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="b4541d96-3442-48f7-8d6d-14e658ff2b3b" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="37edc66b-a2a3-4d42-b234-ee515724eff4" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
