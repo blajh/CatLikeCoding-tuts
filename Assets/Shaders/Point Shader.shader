@@ -17,7 +17,7 @@
 		float _Smoothness;
 
 		void ConfigureSurface (Input input, inout SurfaceOutputStandard surface) {
-			surface.Albedo.rg = saturate(input.worldPos.xy * 0.5 + 0.5);
+			surface.Albedo = saturate(input.worldPos * 0.5 + 0.5);
 			surface.Smoothness = _Smoothness;
         }
 
