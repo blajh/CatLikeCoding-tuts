@@ -1,12 +1,27 @@
 ﻿<Properties StartupConfiguration="{43BEB154-3B70-6D44-9166-728FB1A1C59B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Library/PackageCache/com.unity.shadergraph@7.3.1/Editor/Drawing/MaterialGraphEditWindow.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/01_Movement/MovingSphere.cs">
     <Files>
-      <File FileName="Library/PackageCache/com.unity.shadergraph@7.3.1/Editor/Drawing/MaterialGraphEditWindow.cs" Line="99" Column="1" />
+      <File FileName="Assets/Scripts/01_Movement/MovingSphere.cs" Line="1" Column="1" />
     </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="CatLikeCoding-tuts" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="01_Movement" expanded="True">
+                  <Node name="MovingSphere.cs" selected="True" />
+                </Node>
+              </Node>
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="9de269af-74ac-43c1-a394-196274d08932" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7d921145-85bf-467b-baaf-b99e0631f02f" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
