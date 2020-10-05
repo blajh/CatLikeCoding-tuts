@@ -497,6 +497,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8e05bf42441b4bc1839b0b00f66c837, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxSpeed: 10
+  maxAcceleration: 10
+  bounciness: 0.5
+  allowedArea:
+    serializedVersion: 2
+    x: -4.5
+    y: -4.5
+    width: 9
+    height: 9
 --- !u!96 &1841849277
 TrailRenderer:
   serializedVersion: 2
