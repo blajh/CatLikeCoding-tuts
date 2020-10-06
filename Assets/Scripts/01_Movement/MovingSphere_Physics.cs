@@ -58,7 +58,7 @@ public class MovingSphere_Physics : MonoBehaviour
     }
 
     void EvaluateCollision(Collision collision) {
-        for (int i = 0; collision.contactCount; i++) {
+        for (int i = 0; i < collision.contactCount; i++) {
 			Vector3 normal = collision.GetContact(i).normal;
             onGround |= normal.y >= 0.9f;
 		}
