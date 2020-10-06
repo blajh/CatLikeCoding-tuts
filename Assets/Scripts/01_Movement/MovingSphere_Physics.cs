@@ -15,7 +15,7 @@ public class MovingSphere_Physics : MonoBehaviour
 	[SerializeField]
 	Rect allowedArea = new Rect(-4.5f, -4.5f, 9f, 9f);
 
-	Vector3 velocity;
+	Vector3 velocity, desiredVelocity;
 
 	Rigidbody body;
 
@@ -31,9 +31,13 @@ public class MovingSphere_Physics : MonoBehaviour
 		playerInput.y = Input.GetAxis("Vertical");
 		playerInput = Vector2.ClampMagnitude(playerInput, 1f);
 
-		Vector3 desiredVelocity =
+		desiredVelocity =
 			new Vector3(playerInput.x, 0f, playerInput.y) * maxSpeed;
 
+	}
+
+    private void FixedUpdate()
+    {
 		velocity = body.velocity;
 		float maxSpeedChange = maxAcceleration * Time.deltaTime;
 		velocity.x =
