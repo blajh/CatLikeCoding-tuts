@@ -1,28 +1,12 @@
 ﻿<Properties StartupConfiguration="{43BEB154-3B70-6D44-9166-728FB1A1C59B}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/01_Movement/MovingSphere_Physics.cs">
     <Files>
-      <File FileName="Assets/Scripts/01_Movement/MovingSphere.cs" Line="1" Column="1" />
-      <File FileName="Assets/Scripts/01_Movement/MovingSphere_Physics.cs" Line="60" Column="2" />
+      <File FileName="Assets/Scripts/01_Movement/MovingSphere_Physics.cs" Line="49" Column="6" />
     </Files>
-    <Pads>
-      <Pad Id="ProjectPad">
-        <State name="__root__">
-          <Node name="CatLikeCoding-tuts" expanded="True">
-            <Node name="Assets" expanded="True">
-              <Node name="Scripts" expanded="True">
-                <Node name="01_Movement" expanded="True">
-                  <Node name="MovingSphere_Physics.cs" selected="True" />
-                </Node>
-              </Node>
-            </Node>
-          </Node>
-        </State>
-      </Pad>
-    </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7d921145-85bf-467b-baaf-b99e0631f02f" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="cd61be41-5d9c-408e-8494-9c43aadc74bc" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
