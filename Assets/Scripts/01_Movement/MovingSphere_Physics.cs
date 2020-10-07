@@ -2,20 +2,19 @@
 
 public class MovingSphere_Physics : MonoBehaviour
 {
-
 	[SerializeField, Range(0f, 100f)] float maxSpeed = 10f;
 	[SerializeField, Range(0f, 100f)] float maxAcceleration = 10f, maxAirAcceleration = 1f;
 	[SerializeField, Range(0f, 10f)] float jumpHeight = 2f;
 	[SerializeField, Range(0, 5)] int maxAirJumps = 0;
     [SerializeField, Range(0f, 90f)] float maxGroundAngle = 40f;
-	int jumpPhase;
-	Vector3 velocity, desiredVelocity;
-	Vector3 contactNormal;
-	Rigidbody body;
-	bool desiredJump;
-	bool onGround;
-	float minGroundDotProduct;
 
+    Vector3 velocity, desiredVelocity, contactNormal;
+	Rigidbody body;
+	float minGroundDotProduct;
+	int jumpPhase, groundContactCount;
+	bool desiredJump;
+	bool OnGround => groundContactCount > 0;
+	
     void OnValidate() {
 		minGroundDotProduct = Mathf.Cos(maxGroundAngle * Mathf.Deg2Rad);
     }
@@ -50,23 +49,25 @@ public class MovingSphere_Physics : MonoBehaviour
 	}
 
     void ClearState() {
-		onGround = false;
+		groundContactCount = 0;
 		contactNormal = Vector3.zero;
     }
 
     void UpdateState() {
 		velocity = body.velocity;
-        if (onGround) {
+        if (OnGround) {
 			jumpPhase = 0;
-			contactNormal.Normalize();
-        }
+            if (groundContactCount > 1) { 
+                contactNormal.Normalize();
+			}
+		}
         else {
 			contactNormal = Vector3.up;
         }
     }
 
     void Jump(){
-        if (onGround || jumpPhase < maxAirJumps) {
+        if (OnGround || jumpPhase < maxAirJumps) {
 			jumpPhase += 1;
 			float jumpSpeed = Mathf.Sqrt(-2f * Physics.gravity.y * jumpHeight);
 			float alignedSpeed = Vector3.Dot(velocity, contactNormal);
@@ -89,7 +90,7 @@ public class MovingSphere_Physics : MonoBehaviour
         for (int i = 0; i < collision.contactCount; i++) {
 			Vector3 normal = collision.GetContact(i).normal;
             if (normal.y >= minGroundDotProduct) {
-				onGround = true;
+				groundContactCount += 1;
 				contactNormal += normal;
             }
 		}
@@ -106,7 +107,7 @@ public class MovingSphere_Physics : MonoBehaviour
 		float currentX = Vector3.Dot(velocity.normalized, xAxis);
 		float currentZ = Vector3.Dot(velocity.normalized, zAxis);
 
-		float acceleration = onGround ? maxAcceleration : maxAirAcceleration;
+		float acceleration = OnGround ? maxAcceleration : maxAirAcceleration;
 		float maxSpeedChange = acceleration * Time.deltaTime;
 
         float newX =
