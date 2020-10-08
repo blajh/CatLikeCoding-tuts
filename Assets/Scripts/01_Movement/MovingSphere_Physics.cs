@@ -134,5 +134,15 @@ public class MovingSphere_Physics : MonoBehaviour
         if (hit.normal.y < minGroundDotProduct) {
 			return false;
         }
+
+		groundContactCount = 1;
+		contactNormal = hit.normal;
+		float speed = velocity.magnitude;
+		float dot = Vector3.Dot(velocity, hit.normal);
+
+        if (dot > 0f) { 
+		    velocity = (velocity - hit.normal * dot).normalized * speed;
+		}
+		return true;
 	}
 }
