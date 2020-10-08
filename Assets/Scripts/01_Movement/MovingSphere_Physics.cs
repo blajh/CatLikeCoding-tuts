@@ -60,7 +60,7 @@ public class MovingSphere_Physics : MonoBehaviour
     void UpdateState() {
 		stepsSinceLastGrounded += 1;
 		velocity = body.velocity;
-        if (OnGround) {
+        if (OnGround || SnapToGround()) {
 			stepsSinceLastGrounded = 0;
 			jumpPhase = 0;
             if (groundContactCount > 1) { 
@@ -122,5 +122,12 @@ public class MovingSphere_Physics : MonoBehaviour
 			Mathf.MoveTowards(currentZ, desiredVelocity.z, maxSpeedChange);
 
 		velocity += xAxis * (newX - currentX) + zAxis * (newZ - currentZ);
+	}
+
+    bool SnapToGround() {
+        if (stepsSinceLastGrounded > 1) { 
+		    return false;
+		}
+		return false;
 	}
 }
