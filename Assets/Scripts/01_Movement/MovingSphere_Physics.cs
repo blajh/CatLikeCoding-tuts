@@ -11,7 +11,7 @@ public class MovingSphere_Physics : MonoBehaviour
     Vector3 velocity, desiredVelocity, contactNormal;
 	Rigidbody body;
 	float minGroundDotProduct;
-	int jumpPhase, groundContactCount;
+	int jumpPhase, groundContactCount, stepsSinceLastGrounded;
 	bool desiredJump;
 	bool OnGround => groundContactCount > 0;
 	
@@ -58,8 +58,10 @@ public class MovingSphere_Physics : MonoBehaviour
     }
 
     void UpdateState() {
+		stepsSinceLastGrounded += 1;
 		velocity = body.velocity;
         if (OnGround) {
+			stepsSinceLastGrounded = 0;
 			jumpPhase = 0;
             if (groundContactCount > 1) { 
                 contactNormal.Normalize();
