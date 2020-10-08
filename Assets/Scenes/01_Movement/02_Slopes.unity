@@ -361,6 +361,11 @@ PrefabInstance:
       propertyPath: probeMask.m_Bits
       value: 51
       objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
       propertyPath: m_Name
@@ -841,6 +846,11 @@ PrefabInstance:
       propertyPath: probeMask.m_Bits
       value: 51
       objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
       propertyPath: m_Name
@@ -1256,6 +1266,11 @@ PrefabInstance:
       propertyPath: probeMask.m_Bits
       value: 51
       objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
       propertyPath: m_Name
@@ -1513,6 +1528,11 @@ PrefabInstance:
         type: 3}
       propertyPath: probeMask.m_Bits
       value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
@@ -1959,6 +1979,11 @@ PrefabInstance:
         type: 3}
       propertyPath: probeMask.m_Bits
       value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
@@ -3443,6 +3468,11 @@ PrefabInstance:
       propertyPath: probeMask.m_Bits
       value: 51
       objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
       propertyPath: m_Name
@@ -3531,6 +3561,11 @@ PrefabInstance:
         type: 3}
       propertyPath: probeMask.m_Bits
       value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
@@ -7925,6 +7960,11 @@ PrefabInstance:
       propertyPath: probeMask.m_Bits
       value: 51
       objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
       propertyPath: m_Name
@@ -9276,6 +9316,11 @@ PrefabInstance:
       propertyPath: probeMask.m_Bits
       value: 51
       objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
       propertyPath: m_Name
@@ -10423,6 +10468,11 @@ PrefabInstance:
       propertyPath: probeMask.m_Bits
       value: 51
       objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
       propertyPath: m_Name
@@ -10518,6 +10568,11 @@ PrefabInstance:
       propertyPath: probeMask.m_Bits
       value: 51
       objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
       propertyPath: m_Name
@@ -10606,6 +10661,11 @@ PrefabInstance:
         type: 3}
       propertyPath: probeMask.m_Bits
       value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
@@ -11215,6 +11275,11 @@ PrefabInstance:
         type: 3}
       propertyPath: probeMask.m_Bits
       value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
@@ -12225,6 +12290,11 @@ PrefabInstance:
       propertyPath: probeMask.m_Bits
       value: 51
       objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
       propertyPath: m_Name
@@ -12313,6 +12383,11 @@ PrefabInstance:
         type: 3}
       propertyPath: probeMask.m_Bits
       value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
@@ -12403,6 +12478,11 @@ PrefabInstance:
       propertyPath: probeMask.m_Bits
       value: 51
       objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
       propertyPath: m_Name
@@ -12492,6 +12572,11 @@ PrefabInstance:
       propertyPath: probeMask.m_Bits
       value: 51
       objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
       propertyPath: m_Name
@@ -12580,6 +12665,11 @@ PrefabInstance:
         type: 3}
       propertyPath: probeMask.m_Bits
       value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
@@ -13118,6 +13208,11 @@ PrefabInstance:
       propertyPath: probeMask.m_Bits
       value: 51
       objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
       propertyPath: m_Name
@@ -13207,6 +13302,11 @@ PrefabInstance:
       propertyPath: probeMask.m_Bits
       value: 51
       objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
       propertyPath: m_Name
@@ -13295,6 +13395,11 @@ PrefabInstance:
         type: 3}
       propertyPath: probeMask.m_Bits
       value: 51
+      objectReference: {fileID: 0}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSnapSpeed
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
