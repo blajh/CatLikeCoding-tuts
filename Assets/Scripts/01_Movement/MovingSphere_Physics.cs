@@ -128,6 +128,11 @@ public class MovingSphere_Physics : MonoBehaviour
         if (stepsSinceLastGrounded > 1) { 
 		    return false;
 		}
-		return false;
+		if (!Physics.Raycast(body.position, Vector3.down, out RaycastHit hit)) {
+			return false;
+		}
+        if (hit.normal.y < minGroundDotProduct) {
+			return false;
+        }
 	}
 }
