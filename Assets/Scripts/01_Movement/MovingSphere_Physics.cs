@@ -9,12 +9,13 @@ public class MovingSphere_Physics : MonoBehaviour {
 	[SerializeField, Min(0f)] float probeDistance = 1f;
 	[SerializeField] LayerMask probeMask = -1, stairsMask = -1;
 
-	Vector3 velocity, desiredVelocity, contactNormal;
+	Vector3 velocity, desiredVelocity, contactNormal, steepNormal;
 	Rigidbody body;
 	float minGroundDotProduct, minStairsDotProduct;
-	int jumpPhase, groundContactCount, stepsSinceLastGrounded, stepsSinceLastJump;
+	int jumpPhase, groundContactCount, stepsSinceLastGrounded, stepsSinceLastJump, steepContactCount;
 	bool desiredJump;
 	bool OnGround => groundContactCount > 0;
+	bool OnSteep => steepContactCount > 0;
 
 	void OnValidate() {
 		minGroundDotProduct = Mathf.Cos(maxGroundAngle * Mathf.Deg2Rad);
@@ -55,8 +56,8 @@ public class MovingSphere_Physics : MonoBehaviour {
 	}
 
 	void ClearState() {
-		groundContactCount = 0;
-		contactNormal = Vector3.zero;
+		groundContactCount = steepContactCount = 0;
+		contactNormal = steepNormal = Vector3.zero;
 	}
 
 	void UpdateState() {
@@ -103,6 +104,10 @@ public class MovingSphere_Physics : MonoBehaviour {
 			if (normal.y >= minGroundDotProduct) {
 				groundContactCount += 1;
 				contactNormal += normal;
+			}
+			else if (normal.y > -0.01f) {
+				steepContactCount += 1;
+				steepNormal += normal;
 			}
 		}
 	}
