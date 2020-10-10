@@ -5,19 +5,20 @@ public class MovingSphere_Physics : MonoBehaviour {
 	[SerializeField, Range(0f, 100f)] float maxAcceleration = 10f, maxAirAcceleration = 1f;
 	[SerializeField, Range(0f, 10f)] float jumpHeight = 2f;
 	[SerializeField, Range(0, 5)] int maxAirJumps = 0;
-	[SerializeField, Range(0f, 90f)] float maxGroundAngle = 40f;
+	[SerializeField, Range(0f, 90f)] float maxGroundAngle = 40f, maxStairsAngle = 50f;
 	[SerializeField, Min(0f)] float probeDistance = 1f;
-	[SerializeField] LayerMask probeMask = -1;
+	[SerializeField] LayerMask probeMask = -1, stairsMask = -1;
 
 	Vector3 velocity, desiredVelocity, contactNormal;
 	Rigidbody body;
-	float minGroundDotProduct;
+	float minGroundDotProduct, minStairsDotProduct;
 	int jumpPhase, groundContactCount, stepsSinceLastGrounded, stepsSinceLastJump;
 	bool desiredJump;
 	bool OnGround => groundContactCount > 0;
 
 	void OnValidate() {
 		minGroundDotProduct = Mathf.Cos(maxGroundAngle * Mathf.Deg2Rad);
+		minStairsDotProduct = Mathf.Cos(maxStairsAngle * Mathf.Deg2Rad);
 	}
 
 	void Awake() {
@@ -96,6 +97,7 @@ public class MovingSphere_Physics : MonoBehaviour {
 	}
 
 	void EvaluateCollision(Collision collision) {
+		float minDot = GetMinDot(collision.gameObject.layer);
 		for (int i = 0; i < collision.contactCount; i++) {
 			Vector3 normal = collision.GetContact(i).normal;
 			if (normal.y >= minGroundDotProduct) {
@@ -139,7 +141,7 @@ public class MovingSphere_Physics : MonoBehaviour {
 			probeDistance, probeMask)) {
 			return false;
 		}
-		if (hit.normal.y < minGroundDotProduct) {
+		if (hit.normal.y < GetMinDot(hit.collider.gameObject.layer) {
 			return false;
 		}
 
@@ -151,5 +153,9 @@ public class MovingSphere_Physics : MonoBehaviour {
 			velocity = (velocity - hit.normal * dot).normalized * speed;
 		}
 		return true;
+	}
+
+	float GetMinDot (int layer) {
+		return (stairsMask & (1 << layer)) == 0 ?
 	}
 }
