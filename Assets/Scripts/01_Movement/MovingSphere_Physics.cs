@@ -37,9 +37,9 @@ public class MovingSphere_Physics : MonoBehaviour {
 			new Vector3(playerInput.x, 0f, playerInput.y) * maxSpeed;
 		desiredJump |= Input.GetButtonDown("Jump");
 
-		GetComponent<Renderer>().material.SetColor(
-			"_Color", OnGround ? Color.black : Color.white
-		);
+		//GetComponent<Renderer>().material.SetColor(
+		//	"_Color", OnGround ? Color.black : Color.white
+		//);
 	}
 
 	private void FixedUpdate() {
@@ -99,6 +99,7 @@ public class MovingSphere_Physics : MonoBehaviour {
 		stepsSinceLastJump = 0;
 		jumpPhase += 1;
 		float jumpSpeed = Mathf.Sqrt(-2f * Physics.gravity.y * jumpHeight);
+		jumpDirection = (jumpDirection + Vector3.up).normalized;
 		float alignedSpeed = Vector3.Dot(velocity, jumpDirection);
 		if (alignedSpeed > 0f) {
 			jumpSpeed = Mathf.Max(jumpSpeed - alignedSpeed, 0f);
