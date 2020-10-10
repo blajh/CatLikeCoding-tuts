@@ -77,16 +77,27 @@ public class MovingSphere_Physics : MonoBehaviour {
 	}
 
 	void Jump() {
-		if (OnGround || jumpPhase < maxAirJumps) {
-			stepsSinceLastJump = 0;
-			jumpPhase += 1;
-			float jumpSpeed = Mathf.Sqrt(-2f * Physics.gravity.y * jumpHeight);
-			float alignedSpeed = Vector3.Dot(velocity, contactNormal);
-			if (alignedSpeed > 0f) {
-				jumpSpeed = Mathf.Max(jumpSpeed - alignedSpeed, 0f);
-			}
-			velocity += contactNormal * jumpSpeed;
+		Vector3 jumpDirection;
+		if (OnGround) {
+			jumpDirection = contactNormal;
 		}
+		else if (OnSteep) {
+			jumpDirection = steepNormal;
+		}
+		else if (jumpPhase < maxAirJumps) {
+			jumpDirection = contactNormal;
+		}
+		else {
+			return;
+		}
+		stepsSinceLastJump = 0;
+		jumpPhase += 1;
+		float jumpSpeed = Mathf.Sqrt(-2f * Physics.gravity.y * jumpHeight);
+		float alignedSpeed = Vector3.Dot(velocity, jumpDirection);
+		if (alignedSpeed > 0f) {
+			jumpSpeed = Mathf.Max(jumpSpeed - alignedSpeed, 0f);
+		}
+		velocity += jumpDirection * jumpSpeed;
 	}
 
 	void OnCollisionEnter(Collision collision) {
