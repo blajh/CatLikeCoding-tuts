@@ -64,7 +64,7 @@ public class MovingSphere_Physics : MonoBehaviour {
 		stepsSinceLastGrounded += 1;
 		stepsSinceLastJump += 1;
 		velocity = body.velocity;
-		if (OnGround || SnapToGround()) {
+		if (OnGround || SnapToGround() || CheckSteepContacts()) {
 			stepsSinceLastGrounded = 0;
 			jumpPhase = 0;
 			if (groundContactCount > 1) {
@@ -101,7 +101,7 @@ public class MovingSphere_Physics : MonoBehaviour {
 		float minDot = GetMinDot(collision.gameObject.layer);
 		for (int i = 0; i < collision.contactCount; i++) {
 			Vector3 normal = collision.GetContact(i).normal;
-			if (normal.y >= minGroundDotProduct) {
+			if (normal.y >= minDot) {
 				groundContactCount += 1;
 				contactNormal += normal;
 			}
@@ -146,7 +146,7 @@ public class MovingSphere_Physics : MonoBehaviour {
 			probeDistance, probeMask)) {
 			return false;
 		}
-		if (hit.normal.y < GetMinDot(hit.collider.gameObject.layer) {
+		if (hit.normal.y < GetMinDot(hit.collider.gameObject.layer)) {
 			return false;
 		}
 
@@ -160,7 +160,21 @@ public class MovingSphere_Physics : MonoBehaviour {
 		return true;
 	}
 
-	float GetMinDot (int layer) {
+	float GetMinDot(int layer) {
 		return (stairsMask & (1 << layer)) == 0 ?
+			minGroundDotProduct : minStairsDotProduct;
 	}
+
+	bool CheckSteepContacts() {
+		if (steepContactCount > 1) {
+			steepNormal.Normalize();
+			if (steepNormal.y >= minGroundDotProduct) {
+				groundContactCount = 1;
+				contactNormal = steepNormal;
+				return true;
+			}
+		}
+		return false;
+	}
+
 }
