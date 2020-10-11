@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-[RequireComponent(typeof(Camera)];
+[RequireComponent(typeof(Camera))]
 public class OrbitCamera : MonoBehaviour
 {
 
