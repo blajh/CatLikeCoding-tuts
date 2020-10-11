@@ -1,12 +1,12 @@
 ﻿<Properties StartupConfiguration="{43BEB154-3B70-6D44-9166-728FB1A1C59B}|">
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/01_Movement/MovingSphere_Physics.cs">
     <Files>
-      <File FileName="Assets/Scripts/01_Movement/MovingSphere_Physics.cs" Line="36" Column="46" />
+      <File FileName="Assets/Scripts/01_Movement/MovingSphere_Physics.cs" Line="42" Column="5" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="02bdd769-4b56-4eac-865e-7153ad1acdf5" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="65560efb-942f-4041-8bb9-9d19e66d1ff6" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
