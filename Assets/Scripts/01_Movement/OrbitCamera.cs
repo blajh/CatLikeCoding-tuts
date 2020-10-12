@@ -10,6 +10,7 @@ public class OrbitCamera : MonoBehaviour {
 	[SerializeField, Range(1f, 360f)] float rotationSpeed = 90f;
 	[SerializeField, Range(-89f, 89f)] float minVerticalAngle = -30f, maxVerticalAngle = 60f;
 	[SerializeField, Min(0f)] float alignDelay = 5f;
+	[SerializeField, Range(0f, 90f)] float alignSmoothRange = 45f;
 
 	Vector3 focusPoint, previousFocusPoint;
 	Vector2 orbitAngles = new Vector2(45f, 0f);
@@ -86,7 +87,17 @@ public class OrbitCamera : MonoBehaviour {
 		}
 
 		float headingAngle = GetAngle(movement / Mathf.Sqrt(movementDeltaSqr));
-		orbitAngles.y = headingAngle;
+		float deltaAbs = Mathf.Abs(Mathf.DeltaAngle(orbitAngles.y, headingAngle));
+		float rotationChange =
+			rotationSpeed * Mathf.Min(Time.unscaledDeltaTime, movementDeltaSqr);
+		if (deltaAbs < alignSmoothRange) {
+			rotationChange *= deltaAbs / alignSmoothRange;
+		}
+		else if (180f - deltaAbs < alignSmoothRange) {
+			rotationChange *= (180f - deltaAbs) / alignSmoothRange;
+		}
+		orbitAngles.y =
+			Mathf.MoveTowardsAngle(orbitAngles.y, headingAngle, rotationChange);
 
 		return true;
 	}
