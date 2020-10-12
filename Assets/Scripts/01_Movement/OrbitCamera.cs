@@ -11,7 +11,7 @@ public class OrbitCamera : MonoBehaviour {
 	[SerializeField, Range(-89f, 89f)] float minVerticalAngle = -30f, maxVerticalAngle = 60f;
 	[SerializeField, Min(0f)] float alignDelay = 5f;
 
-	Vector3 focusPoint;
+	Vector3 focusPoint, previousFocusPoint;
 	Vector2 orbitAngles = new Vector2(45f, 0f);
 
 	float lastManualRotationTime;
@@ -37,6 +37,7 @@ public class OrbitCamera : MonoBehaviour {
 	}
 
 	void UpdateFocusPoint() {
+		previousFocusPoint = focusPoint;
 		Vector3 targetPoint = focus.position;
 		if (focusRadius > 0f) {
 			float distance = Vector3.Distance(targetPoint, focusPoint);
@@ -71,12 +72,25 @@ public class OrbitCamera : MonoBehaviour {
 	}
 
 	bool AutomaticRotation() {
-		if (Time.unscaledDeltaTime - lastManualRotationTime < alignDelay) {
+		if (Time.unscaledTime - lastManualRotationTime < alignDelay) {
 			return false;
 		}
 
+		Vector2 movement = new Vector2(
+			focusPoint.x - previousFocusPoint.x,
+			focusPoint.z - previousFocusPoint.z
+		);
+		float movementDeltaSqr = movement.sqrMagnitude;
+		if (movementDeltaSqr < 0.000001f) {
+			return false;
+		}
+
+		float headingAngle = GetAngle(movement / Mathf.Sqrt(movementDeltaSqr));
+		orbitAngles.y = headingAngle;
+
 		return true;
 	}
+
 
 	void OnValidate() {
 		if (maxVerticalAngle < minVerticalAngle) {
@@ -94,6 +108,11 @@ public class OrbitCamera : MonoBehaviour {
 		else if (orbitAngles.y >= 360f) {
 			orbitAngles.y -= 360f;
 		}
+	}
+
+	static float GetAngle(Vector2 direction) {
+		float angle = Mathf.Acos(direction.y) * Mathf.Rad2Deg;
+		return direction.x < 0f ? 360F - angle : angle;
 	}
 
 
