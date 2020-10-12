@@ -9126,6 +9126,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   focus: {fileID: 315004441}
   distance: 5
+  focusRadius: 1
+  focusCentering: 0.75
+  rotationSpeed: 90
+  minVerticalAngle: -3
+  maxVerticalAngle: 60
 --- !u!54 &963194230
 Rigidbody:
   m_ObjectHideFlags: 0
