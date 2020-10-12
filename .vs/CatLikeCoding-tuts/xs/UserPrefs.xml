@@ -2,12 +2,12 @@
   <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/01_Movement/OrbitCamera.cs">
     <Files>
       <File FileName="Assets/Scripts/01_Movement/MovingSphere_Physics.cs" Line="42" Column="5" />
-      <File FileName="Assets/Scripts/01_Movement/OrbitCamera.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/01_Movement/OrbitCamera.cs" Line="11" Column="21" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="65560efb-942f-4041-8bb9-9d19e66d1ff6" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="7d7cadd3-c201-447c-8778-05ccf56a9ace" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
