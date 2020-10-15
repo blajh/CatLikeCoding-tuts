@@ -14,7 +14,11 @@ public class Graph : MonoBehaviour
 	[SerializeField]
 	FunctionLibrary.FunctionName function = default;
 
+	[SerializeField, Min(0f)]
+	float functionDuration = 1f;
+
 	private Transform[] points;
+	float duration;
 
 	private Transform point = default;
 
@@ -40,14 +44,22 @@ public class Graph : MonoBehaviour
 		}
 	}
 
-
 	void Update() {
+		duration += Time.deltaTime;
+		if (duration >= functionDuration) {
+			duration -= functionDuration;
+			function = FunctionLibrary.GetNextFunctionName(function);
+		}
+		UpdateFunction();
+	}
+
+	void UpdateFunction() {
 		// delegate based on enum selection
 		FunctionLibrary.Function f = FunctionLibrary.GetFunction(function);
 		float time = Time.time;
 		float step = 2f / resolution;
-        // uv space added so that we're not confined in 3 coordinates (Sphere, Torus)
-		float v = 0.5f * step - 1f; 
+		// uv space added so that we're not confined in 3 coordinates (Sphere, Torus)
+		float v = 0.5f * step - 1f;
 		for (int i = 0, x = 0, z = 0; i < points.Length; i++, x++) {
 			if (x == resolution) {
 				x = 0;

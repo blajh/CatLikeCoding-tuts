@@ -154,6 +154,7 @@ MonoBehaviour:
     type: 3}
   resolution: 100
   function: 4
+  functionDuration: 1
 --- !u!4 &449202188
 Transform:
   m_ObjectHideFlags: 0
