@@ -20,10 +20,13 @@ public class Graph : MonoBehaviour
 	TransitionMode transitionMode = TransitionMode.Cycle;
 
 	[SerializeField, Min(0f)]
-	float functionDuration = 1f;
+	float functionDuration = 1f, transitionDuration = 1f;
 
 	private Transform[] points;
 	float duration;
+	bool transitioning;
+
+	FunctionLibrary.FunctionName transitionFunction;
 
 	private Transform point = default;
 
@@ -51,11 +54,25 @@ public class Graph : MonoBehaviour
 
 	void Update() {
 		duration += Time.deltaTime;
-		if (duration >= functionDuration) {
+		if (transitioning) {
+			if (duration >= transitionDuration) {
+				duration -= transitionDuration;
+				transitioning = false;
+			}
+		}
+		else if (duration >= functionDuration) {
 			duration -= functionDuration;
+			transitioning = true;
+			transitionFunction = function;
 			PickNextFunction();
 		}
-		UpdateFunction();
+
+		if (transitioning) {
+			UpdateFunctionTransition();
+		}
+		else {
+			UpdateFunction();
+		}
 	}
 
 	void PickNextFunction() {
@@ -79,6 +96,28 @@ public class Graph : MonoBehaviour
 			}
 			float u = (x + 0.5f) * step - 1f;
 			points[i].localPosition = f(u, v, time);
+		}
+	}
+
+	void UpdateFunctionTransition() {
+		FunctionLibrary.Function
+			from = FunctionLibrary.GetFunction(transitionFunction),
+			to = FunctionLibrary.GetFunction(function);
+		float progress = duration / transitionDuration;
+		float time = Time.time;
+		float step = 2f / resolution;
+		// uv space added so that we're not confined in 3 coordinates (Sphere, Torus)
+		float v = 0.5f * step - 1f;
+		for (int i = 0, x = 0, z = 0; i < points.Length; i++, x++) {
+			if (x == resolution) {
+				x = 0;
+				z += 1;
+				v = (z + 0.5f) * step - 1f;
+			}
+			float u = (x + 0.5f) * step - 1f;
+			points[i].localPosition = FunctionLibrary.Morph(
+				u, v, time, from, to, progress
+			);
 		}
 	}
 
