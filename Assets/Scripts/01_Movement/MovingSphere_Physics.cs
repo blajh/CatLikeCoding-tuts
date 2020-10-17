@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 
 public class MovingSphere_Physics : MonoBehaviour {
+	[SerializeField] Transform playerInputSpace = default;
 	[SerializeField, Range(0f, 100f)] float maxSpeed = 10f, maxSnapSpeed = 100f;
 	[SerializeField, Range(0f, 100f)] float maxAcceleration = 10f, maxAirAcceleration = 1f;
 	[SerializeField, Range(0f, 10f)] float jumpHeight = 2f;
@@ -33,8 +34,15 @@ public class MovingSphere_Physics : MonoBehaviour {
 		playerInput.y = Input.GetAxis("Vertical");
 		playerInput = Vector2.ClampMagnitude(playerInput, 1f);
 
+		if (playerInputSpace) {
+			desiredVelocity = playerInputSpace.TransformDirection(
+				playerInput.x, 0f, playerInput.y) * maxSpeed;
+		}
+		else {
 		desiredVelocity =
 			new Vector3(playerInput.x, 0f, playerInput.y) * maxSpeed;
+		}
+
 		desiredJump |= Input.GetButtonDown("Jump");
 
 		//GetComponent<Renderer>().material.SetColor(
