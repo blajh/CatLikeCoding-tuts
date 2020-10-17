@@ -9133,6 +9133,9 @@ MonoBehaviour:
   maxVerticalAngle: 60
   alignDelay: 5
   alignSmoothRange: 45
+  obstructionMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
 --- !u!54 &963194230
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10661,7 +10664,7 @@ PrefabInstance:
     - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
       propertyPath: maxAcceleration
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
@@ -10673,6 +10676,11 @@ PrefabInstance:
       propertyPath: playerInputSpace
       value: 
       objectReference: {fileID: 963194228}
+    - target: {fileID: 6315726874829106890, guid: 0379d4707a828415494f18f6eb7a15be,
+        type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6315726874829106892, guid: 0379d4707a828415494f18f6eb7a15be,
         type: 3}
       propertyPath: m_Name
